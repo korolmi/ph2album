@@ -4,20 +4,19 @@ from PIL import Image
 
 def main():
     if not appex.is_running_extension():
-        print('Running in Pythonista app, using test image...')
-        img = Image.open('test:Mandrill')
-    else:
-        img = appex.get_image_data()
-    if img:
-        fn = str(dir(appex.get_image()))
-        fnn = appex.get_image().filename
+        print('Running not in Pythonista extension mode, exiting...')
+        return
+    imgList = appex.get_images_data()
+    iFiles = appex.get_images()
+    for i in range(len(imgList)):
+        fnn = iFiles[i].filename
         print('fn:'+fnn)
-        url = 'http://mybizcloud.ru/album/upload'
-        files = {'file':img}
+        sz = len(imgList[i])
+        print('sz:'+sz)
+        #url = 'http://mybizcloud.ru/album/upload'
+        #files = {'file':img}
         #r=requests.post(url,files=files,data={'name':'my test photo'})
         #print(r.text)
-    else:
-        print('No input image found')
 
 if __name__ == '__main__':
     main()
