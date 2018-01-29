@@ -12,7 +12,7 @@ def main():
         fnn = iFiles[i].filename
         print('fn:'+fnn)
         sz = len(imgList[i])
-        print('sz:'+sz)
+        print('sz:'+str(sz))
         #url = 'http://mybizcloud.ru/album/upload'
         #files = {'file':img}
         #r=requests.post(url,files=files,data={'name':'my test photo'})
