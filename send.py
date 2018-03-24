@@ -15,14 +15,7 @@ def snd(sender):
     #fin = open('1.jpg', 'rb')
     files = {'file': iFile}
     data = {"cmd":"addphoto","title":"33Estepona","parent":"2312","ord":"2"}
-    try:
-        r = requests.post(url, files=files, data=data)
-
-        #url = 'http://mybizcloud.ru/album/upload'
-        #files = {'file':img}
-        #r=requests.post(url,files=files,data={'name':'my test photo'})
-        #print(r.text)
-
+    r = requests.post(url, files=files, data=data)
     sender.title = r.text
 
 #imgList = appex.get_images_data()
