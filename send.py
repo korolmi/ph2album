@@ -14,7 +14,7 @@ def snd(sender):
     url = "http://mybizcloud.ru/album/upload"
     #fin = open('1.jpg', 'rb')
     files = {'file': iFile}
-    data = {"cmd":"addphoto","title":"33Estepona","parent":"2312","ord":"2"}
+    data = {"cmd":"addphoto","title":"44Estepona","parent":"2312","ord":"2"}
     r = requests.post(url, files=files, data=data)
     sender.title = r.text
 
