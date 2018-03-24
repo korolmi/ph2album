@@ -20,3 +20,5 @@ def snd(sender):
         #print(r.text)
 
     sender.title = "*".join(fList)
+
+ui.load_view('test-brn').present('sheet')
