@@ -18,9 +18,9 @@ def snd(sender):
     r = requests.post(url, files=files, data=data)
     sender.title = r.text
 
-#imgList = appex.get_images_data()
+imgList = appex.get_images_data()
 iFiles = appex.get_images()
-iFile = iFiles[0]
+iFile = imgList[0]
 
 #fList = []
 #for i in range(len(imgList)):
