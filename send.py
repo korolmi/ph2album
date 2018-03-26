@@ -13,14 +13,16 @@ def snd(sender):
 
     url = "http://mybizcloud.ru/album/upload"
     #fin = open('1.jpg', 'rb')
-    files = {'file': iFile}
-    data = {"cmd":"addphoto","title":"44Estepona","parent":"2312","ord":"2"}
-    r = requests.post(url, files=files, data=data)
-    sender.title = r.text
+    #files = {'file': iFile}
+    #data = {"cmd":"addphoto","title":"44Estepona","parent":"2312","ord":"2"}
+    #r = requests.post(url, files=files, data=data)
+    #sender.title = r.text
 
-imgList = appex.get_images_data()
-iFiles = appex.get_images()
-iFile = imgList[0]
+    sender.title = str(len(sender.superview.subviews))
+    
+#imgList = appex.get_images_data()
+#iFiles = appex.get_images()
+#iFile = imgList[0]
 
 #fList = []
 #for i in range(len(imgList)):
