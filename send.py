@@ -18,7 +18,10 @@ def snd(sender):
     #r = requests.post(url, files=files, data=data)
     #sender.title = r.text
 
-    sender.title = sender.superview['button1'].title+"111"
+    resTxt = sender.superview['action'].segments[sender.superview['action'].selected_index] + "\n"
+    resTxt += sender.superview['parentid'].text + "\n"
+    resTxt += sender.superview['descr'].text + "\n"
+    sender.superview['comments'].text = resTxt
     
 #imgList = appex.get_images_data()
 #iFiles = appex.get_images()
