@@ -11,21 +11,27 @@ def snd(sender):
         print('Running not in Pythonista extension mode, exiting...')
         return
 
+    actions = [ "addalbum", "addday", "addphoto" ]
     url = "http://mybizcloud.ru/album/upload"
-    #fin = open('1.jpg', 'rb')
-    #files = {'file': iFile}
-    #data = {"cmd":"addphoto","title":"44Estepona","parent":"2312","ord":"2"}
-    #r = requests.post(url, files=files, data=data)
+    files = {'file': iFile}
+    data = {
+        "cmd":actions[sender.superview['action'].selected_index],
+        "title":sender.superview['descr'].text,
+        "parent":sender.superview['parentid'].text,
+        "ord":"2"
+    }
+    r = requests.post(url, files=files, data=data)
+    sender.superview['comments'].text = r.text
     #sender.title = r.text
 
-    resTxt = sender.superview['action'].segments[sender.superview['action'].selected_index] + "\n"
-    resTxt += sender.superview['parentid'].text + "\n"
-    resTxt += sender.superview['descr'].text + "\n"
-    sender.superview['comments'].text = resTxt
+    #resTxt = sender.superview['action'].segments[sender.superview['action'].selected_index] + "\n"
+    #resTxt += sender.superview['parentid'].text + "\n"
+    #resTxt += sender.superview['descr'].text + "\n"
+    #sender.superview['comments'].text = resTxt
     
-#imgList = appex.get_images_data()
-#iFiles = appex.get_images()
-#iFile = imgList[0]
+imgList = appex.get_images_data()
+iFiles = appex.get_images()
+iFile = imgList[0]
 
 #fList = []
 #for i in range(len(imgList)):
